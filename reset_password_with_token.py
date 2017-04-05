@@ -5,9 +5,9 @@ MY_HASH_SALT = 'my_hash_salt'  # any string, given it is the same one on creatin
 THREE_DAYS = 3600 * 24 * 3
 
 def send_reset_password_email(username):
-	user = User.objects.get(username=username)
-	unique_token = signing.dumps(user.username, salt=MY_HASH_SALT)
-	# call_my_email_provider(user.email, unique_token, 'reset_password_template')
+    user = User.objects.get(username=username)
+    unique_token = signing.dumps(user.username, salt=MY_HASH_SALT)
+    # call_my_email_provider(user.email, unique_token, 'reset_password_template')
 
 def reset_password_with_token(new_password, token):
     username = _check_token(token)
