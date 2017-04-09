@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.db import models
+from functools import reduce
 
 # Declaring raw_id_fields in your python model's admin class is a good practice because:
 # 1. it makes your admin more usable, because, if you don't foreign keys and many to many relations 
